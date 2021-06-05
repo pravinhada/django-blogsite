@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>{% block title %}BlogSite{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "app.css" %}"/>
+    {% block css_files %}
+    {% endblock %}
+
+</head>
+
+<body>
+<header id="main-navigation">
+    <h1><a href="{% url "starting-page" %}">Prabin's Blog</a></h1>
+    <nav>
+        <a href="{% url "posts-page" %}">All Posts</a>
+        <a href="{% url "read-later" %}">Stored Post</a>
+    </nav>
+</header>
+
+{% block content %}{% endblock %}
+</body>
+</html>
+
